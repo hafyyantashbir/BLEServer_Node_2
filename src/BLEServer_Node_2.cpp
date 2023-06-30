@@ -215,6 +215,7 @@ void loop() {
       jsonobject["NodeID"] = node_asal;
       jsonobject["Berat"] = berat;
       serializeJson(doc, datakirim);
+      datakirim = "";
       char kirim_loop[datakirim.length() + 1];
       datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
       BLEScanResults foundDevices = pBLEScan->start(scanTime, false);
@@ -265,6 +266,7 @@ void loop() {
       JsonObject jsonobject1 = jsonarray.createNestedObject();
       jsonobject1["NodeID"] = node_asal;
       jsonobject1["Berat"] = berat;
+      datakirim = "";
       serializeJson(doc, datakirim);
       char kirim_loop[datakirim.length() + 1];
       datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
@@ -308,6 +310,7 @@ void loop() {
       JsonObject jsonobject1 = jsonarray.createNestedObject();
       jsonobject1["NodeID"] = node_asal;
       jsonobject1["Berat"] = berat;
+      datakirim = "";
       serializeJson(doc, datakirim);
       char kirim_loop[datakirim.length() + 1];
       datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
@@ -351,6 +354,7 @@ void loop() {
       JsonObject jsonobject1 = jsonarray.createNestedObject();
       jsonobject1["NodeID"] = node_asal;
       jsonobject1["Berat"] = berat;
+      datakirim = "";
       serializeJson(doc, datakirim);
       char kirim_loop[datakirim.length() + 1];
       datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
@@ -404,6 +408,7 @@ void loop() {
         JsonObject jsonobject2 = jsonarray.createNestedObject();
         jsonobject2["NodeID"] = node_asal;
         jsonobject2["Berat"] = berat;
+        datakirim = "";
         serializeJson(doc, datakirim);
         char kirim_loop[datakirim.length() + 1];
         datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
@@ -440,6 +445,7 @@ void loop() {
         JsonObject jsonobject2 = jsonarray.createNestedObject();
         jsonobject2["NodeID"] = node_asal;
         jsonobject2["Berat"] = berat;
+        datakirim = "";
         serializeJson(doc, datakirim);
         char kirim_loop[datakirim.length() + 1];
         datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
@@ -476,6 +482,7 @@ void loop() {
         JsonObject jsonobject2 = jsonarray.createNestedObject();
         jsonobject2["NodeID"] = node_asal;
         jsonobject2["Berat"] = berat;
+        datakirim = "";
         serializeJson(doc, datakirim);
         char kirim_loop[datakirim.length() + 1];
         datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
@@ -512,6 +519,7 @@ void loop() {
         JsonObject jsonobject2 = jsonarray.createNestedObject();
         jsonobject2["NodeID"] = node_asal;
         jsonobject2["Berat"] = berat;
+        datakirim = "";
         serializeJson(doc, datakirim);
         char kirim_loop[datakirim.length() + 1];
         datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
@@ -550,6 +558,7 @@ void loop() {
         JsonObject jsonobject2 = jsonarray.createNestedObject();
         jsonobject2["NodeID"] = node_asal;
         jsonobject2["Berat"] = berat;
+        datakirim = "";
         serializeJson(doc, datakirim);
         char kirim_loop[datakirim.length() + 1];
         datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
@@ -588,6 +597,7 @@ void loop() {
         JsonObject jsonobject2 = jsonarray.createNestedObject();
         jsonobject2["NodeID"] = node_asal;
         jsonobject2["Berat"] = berat;
+        datakirim = "";
         serializeJson(doc, datakirim);
         char kirim_loop[datakirim.length() + 1];
         datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
@@ -638,6 +648,7 @@ void loop() {
         JsonObject jsonobject3 = jsonarray.createNestedObject();
         jsonobject3["NodeID"] = node_asal;
         jsonobject3["Berat"] = berat;
+        datakirim = "";
         serializeJson(doc, datakirim);
         char kirim_loop[datakirim.length() + 1];
         datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
@@ -684,6 +695,7 @@ void loop() {
         JsonObject jsonobject3 = jsonarray.createNestedObject();
         jsonobject3["NodeID"] = node_asal;
         jsonobject3["Berat"] = berat;
+        datakirim = "";
         serializeJson(doc, datakirim);
         char kirim_loop[datakirim.length() + 1];
         datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
@@ -730,6 +742,7 @@ void loop() {
         JsonObject jsonobject3 = jsonarray.createNestedObject();
         jsonobject3["NodeID"] = node_asal;
         jsonobject3["Berat"] = berat;
+        datakirim = "";
         serializeJson(doc, datakirim);
         char kirim_loop[datakirim.length() + 1];
         datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
@@ -776,6 +789,7 @@ void loop() {
         JsonObject jsonobject3 = jsonarray.createNestedObject();
         jsonobject3["NodeID"] = node_asal;
         jsonobject3["Berat"] = berat;
+        datakirim = "";
         serializeJson(doc, datakirim);
         char kirim_loop[datakirim.length() + 1];
         datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
@@ -822,6 +836,7 @@ void loop() {
         JsonObject jsonobject3 = jsonarray.createNestedObject();
         jsonobject3["NodeID"] = node_asal;
         jsonobject3["Berat"] = berat;
+        datakirim = "";
         serializeJson(doc, datakirim);
         char kirim_loop[datakirim.length() + 1];
         datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
@@ -868,6 +883,7 @@ void loop() {
         JsonObject jsonobject3 = jsonarray.createNestedObject();
         jsonobject3["NodeID"] = node_asal;
         jsonobject3["Berat"] = berat;
+        datakirim = "";
         serializeJson(doc, datakirim);
         char kirim_loop[datakirim.length() + 1];
         datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
