@@ -26,11 +26,11 @@ uint8_t dataBuffer[MAX_PAYLOAD_SIZE];  //MAX_PAYLOAD_SIZE is defined in RF24Netw
 #define LED_BUILTIN 2
 
 //alamat node
-const uint16_t this_node = 01;   // alamat node ini (NODE_2) dalam format Octal
-const uint16_t NODE_1 = 00;  // Alamat NODE_1 dalam format Octal
-const uint16_t NODE_3 = 02; // Alamat NODE_3 dalam format Octal
-const uint16_t NODE_4 = 03; // Alamat NODE_4 dalam format Octal
-const uint16_t NODE_5 = 04; // Alamat NODE_5 dalam format Octal
+const uint16_t this_node = 02;   // alamat node ini (NODE_2) dalam format Octal
+const uint16_t NODE_1 = 01;  // Alamat NODE_1 dalam format Octal
+const uint16_t NODE_3 = 03; // Alamat NODE_3 dalam format Octal
+const uint16_t NODE_4 = 04; // Alamat NODE_4 dalam format Octal
+const uint16_t NODE_5 = 00; // Alamat NODE_5 dalam format Octal
 
 //Variabel DATA
 int node_asal = 2; //data node
