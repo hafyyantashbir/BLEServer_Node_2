@@ -256,8 +256,8 @@ void loop() {
       jsonobject["NodeID"] = node_asal;
       jsonobject["Berat"] = berat;
       jsonobject["Unxtime"] = now.unixtime();
-      serializeJson(doc, datakirim);
       datakirim = "";
+      serializeJson(doc, datakirim);      
       char kirim_loop[datakirim.length() + 1];
       datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
       BLEScanResults foundDevices = pBLEScan->start(scanTime, false);
@@ -274,8 +274,8 @@ void loop() {
           jsonobject1["Suhu"] = NULL;
           jsonobject1["Kelembapan"] = NULL;
           jsonobject1["Unxtime"] = NULL;
-          serializeJson(doc, datakirim);
           datakirim = "";
+          serializeJson(doc, datakirim);          
           char kirim_loop[datakirim.length() + 1];
           datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
           if(NODE_3_RSSI >= NODE_4_RSSI && NODE_3_RSSI >= NODE_5_RSSI){
@@ -297,8 +297,8 @@ void loop() {
               jsonobject2["Roll"] = NULL;
               jsonobject2["Frekuensi"] = NULL;
               jsonobject2["Unxtime"] = NULL;
-              serializeJson(doc, datakirim);
               datakirim = "";
+              serializeJson(doc, datakirim);              
               char kirim_loop[datakirim.length() + 1];
               datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
               if(NODE_4_RSSI >= NODE_5_RSSI){
@@ -326,8 +326,8 @@ void loop() {
                   jsonobject3["TofY"] = NULL;
                   jsonobject3["TofZ"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_5)){
@@ -360,8 +360,8 @@ void loop() {
                     jsonobject4["usY"] = NULL;
                     jsonobject4["usZ"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -401,8 +401,8 @@ void loop() {
                   jsonobject3["usY"] = NULL;
                   jsonobject3["usZ"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_4)){
@@ -435,8 +435,8 @@ void loop() {
                     jsonobject4["TofY"] = NULL;
                     jsonobject4["TofZ"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -472,8 +472,8 @@ void loop() {
               jsonobject2["TofY"] = NULL;
               jsonobject2["TofZ"] = NULL;
               jsonobject2["Unxtime"] = NULL;
-              serializeJson(doc, datakirim);
               datakirim = "";
+              serializeJson(doc, datakirim);              
               char kirim_loop[datakirim.length() + 1];
               datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
               if(NODE_3_RSSI >= NODE_5_RSSI){
@@ -501,8 +501,8 @@ void loop() {
                   jsonobject3["Roll"] = NULL;
                   jsonobject3["Frekuensi"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_5)){
@@ -535,8 +535,8 @@ void loop() {
                     jsonobject4["usY"] = NULL;
                     jsonobject4["usZ"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -576,8 +576,8 @@ void loop() {
                   jsonobject3["usY"] = NULL;
                   jsonobject3["usZ"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_3)){
@@ -610,8 +610,8 @@ void loop() {
                     jsonobject4["Roll"] = NULL;
                     jsonobject4["Frekuensi"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -647,8 +647,8 @@ void loop() {
               jsonobject2["usY"] = NULL;
               jsonobject2["usZ"] = NULL;
               jsonobject2["Unxtime"] = NULL;
-              serializeJson(doc, datakirim);
               datakirim = "";
+              serializeJson(doc, datakirim);              
               char kirim_loop[datakirim.length() + 1];
               datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
               if(NODE_3_RSSI >= NODE_4_RSSI){
@@ -676,8 +676,8 @@ void loop() {
                   jsonobject3["Roll"] = NULL;
                   jsonobject3["Frekuensi"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_4)){
@@ -710,8 +710,8 @@ void loop() {
                     jsonobject4["TofY"] = NULL;
                     jsonobject4["TofZ"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -751,8 +751,8 @@ void loop() {
                   jsonobject3["TofY"] = NULL;
                   jsonobject3["TofZ"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_3)){
@@ -785,8 +785,8 @@ void loop() {
                     jsonobject4["Roll"] = NULL;
                     jsonobject4["Frekuensi"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -822,8 +822,8 @@ void loop() {
           jsonobject1["Roll"] = NULL;
           jsonobject1["Frekuensi"] = NULL;
           jsonobject1["Unxtime"] = NULL;
-          serializeJson(doc, datakirim);
           datakirim = "";
+          serializeJson(doc, datakirim);          
           char kirim_loop[datakirim.length() + 1];
           datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
           if(NODE_1_RSSI >= NODE_4_RSSI && NODE_1_RSSI >= NODE_5_RSSI){
@@ -845,8 +845,8 @@ void loop() {
               jsonobject2["Suhu"] = NULL;
               jsonobject2["Kelembapan"] = NULL;
               jsonobject2["Unxtime"] = NULL;
-              serializeJson(doc, datakirim);
               datakirim = "";
+              serializeJson(doc, datakirim);              
               char kirim_loop[datakirim.length() + 1];
               datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
               if(NODE_4_RSSI >= NODE_5_RSSI){
@@ -874,8 +874,8 @@ void loop() {
                   jsonobject3["TofY"] = NULL;
                   jsonobject3["TofZ"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_5)){
@@ -908,8 +908,8 @@ void loop() {
                     jsonobject4["usY"] = NULL;
                     jsonobject4["usZ"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -949,8 +949,8 @@ void loop() {
                   jsonobject3["usY"] = NULL;
                   jsonobject3["usZ"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_4)){
@@ -983,8 +983,8 @@ void loop() {
                     jsonobject4["TofY"] = NULL;
                     jsonobject4["TofZ"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -1021,8 +1021,8 @@ void loop() {
               jsonobject2["TofY"] = NULL;
               jsonobject2["TofZ"] = NULL;
               jsonobject2["Unxtime"] = NULL;
-              serializeJson(doc, datakirim);
               datakirim = "";
+              serializeJson(doc, datakirim);              
               char kirim_loop[datakirim.length() + 1];
               datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
               if(NODE_1_RSSI >= NODE_5_RSSI){
@@ -1050,8 +1050,8 @@ void loop() {
                   jsonobject3["Suhu"] = NULL;
                   jsonobject3["Kelembapan"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_5)){
@@ -1084,8 +1084,8 @@ void loop() {
                     jsonobject4["usY"] = NULL;
                     jsonobject4["usZ"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -1126,8 +1126,8 @@ void loop() {
                   jsonobject3["usY"] = NULL;
                   jsonobject3["usZ"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_1)){
@@ -1160,8 +1160,8 @@ void loop() {
                     jsonobject4["Suhu"] = NULL;
                     jsonobject4["Kelembapan"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -1198,8 +1198,8 @@ void loop() {
               jsonobject2["usY"] = NULL;
               jsonobject2["usZ"] = NULL;
               jsonobject2["Unxtime"] = NULL;
-              serializeJson(doc, datakirim);
               datakirim = "";
+              serializeJson(doc, datakirim);              
               char kirim_loop[datakirim.length() + 1];
               datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
               if(NODE_1_RSSI >= NODE_4_RSSI){
@@ -1227,8 +1227,8 @@ void loop() {
                   jsonobject3["Suhu"] = NULL;
                   jsonobject3["Kelembapan"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_4)){
@@ -1261,8 +1261,8 @@ void loop() {
                     jsonobject4["TofY"] = NULL;
                     jsonobject4["TofZ"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -1303,8 +1303,8 @@ void loop() {
                   jsonobject3["TofY"] = NULL;
                   jsonobject3["TofZ"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_1)){
@@ -1337,8 +1337,8 @@ void loop() {
                     jsonobject4["Suhu"] = NULL;
                     jsonobject4["Kelembapan"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -1374,8 +1374,8 @@ void loop() {
           jsonobject1["TofY"] = NULL;
           jsonobject1["TofX"] = NULL;
           jsonobject1["Unxtime"] = NULL;
-          serializeJson(doc, datakirim);
           datakirim = "";
+          serializeJson(doc, datakirim);          
           char kirim_loop[datakirim.length() + 1];
           datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
           if(NODE_1_RSSI >= NODE_3_RSSI && NODE_1_RSSI >= NODE_5_RSSI){
@@ -1397,8 +1397,8 @@ void loop() {
               jsonobject2["Suhu"] = NULL;
               jsonobject2["Kelembapan"] = NULL;
               jsonobject2["Unxtime"] = NULL;
-              serializeJson(doc, datakirim);
               datakirim = "";
+              serializeJson(doc, datakirim);              
               char kirim_loop[datakirim.length() + 1];
               datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
               if(NODE_3_RSSI >= NODE_5_RSSI){
@@ -1426,8 +1426,8 @@ void loop() {
                   jsonobject3["Roll"] = NULL;
                   jsonobject3["Frekuensi"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_5)){
@@ -1460,8 +1460,8 @@ void loop() {
                     jsonobject4["usY"] = NULL;
                     jsonobject4["usZ"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -1501,8 +1501,8 @@ void loop() {
                   jsonobject3["usY"] = NULL;
                   jsonobject3["usZ"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_3)){
@@ -1535,8 +1535,8 @@ void loop() {
                     jsonobject4["Roll"] = NULL;
                     jsonobject4["Frekuensi"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -1573,8 +1573,8 @@ void loop() {
               jsonobject2["Roll"] = NULL;
               jsonobject2["Frekuensi"] = NULL;
               jsonobject2["Unxtime"] = NULL;
-              serializeJson(doc, datakirim);
               datakirim = "";
+              serializeJson(doc, datakirim);              
               char kirim_loop[datakirim.length() + 1];
               datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
               if(NODE_1_RSSI >= NODE_5_RSSI){
@@ -1602,8 +1602,8 @@ void loop() {
                   jsonobject3["Suhu"] = NULL;
                   jsonobject3["Kelembapan"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_5)){
@@ -1636,8 +1636,8 @@ void loop() {
                     jsonobject4["usY"] = NULL;
                     jsonobject4["usZ"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -1678,8 +1678,8 @@ void loop() {
                   jsonobject3["usY"] = NULL;
                   jsonobject3["usZ"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_1)){
@@ -1712,8 +1712,8 @@ void loop() {
                     jsonobject4["Suhu"] = NULL;
                     jsonobject4["Kelembapan"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -1750,8 +1750,8 @@ void loop() {
               jsonobject2["usY"] = NULL;
               jsonobject2["usZ"] = NULL;
               jsonobject2["Unxtime"] = NULL;
-              serializeJson(doc, datakirim);
               datakirim = "";
+              serializeJson(doc, datakirim);              
               char kirim_loop[datakirim.length() + 1];
               datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
               if(NODE_1_RSSI >= NODE_3_RSSI){
@@ -1779,8 +1779,8 @@ void loop() {
                   jsonobject3["Suhu"] = NULL;
                   jsonobject3["Kelembapan"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_3)){
@@ -1813,8 +1813,8 @@ void loop() {
                     jsonobject4["Roll"] = NULL;
                     jsonobject4["Frekuensi"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -1855,8 +1855,8 @@ void loop() {
                   jsonobject3["Roll"] = NULL;
                   jsonobject3["Frekuensi"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_1)){
@@ -1889,8 +1889,8 @@ void loop() {
                     jsonobject4["Suhu"] = NULL;
                     jsonobject4["Kelembapan"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -1926,8 +1926,8 @@ void loop() {
           jsonobject1["usY"] = NULL;
           jsonobject1["usX"] = NULL;
           jsonobject1["Unxtime"] = NULL;
-          serializeJson(doc, datakirim);
           datakirim = "";
+          serializeJson(doc, datakirim);          
           char kirim_loop[datakirim.length() + 1];
           datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
           if(NODE_1_RSSI >= NODE_3_RSSI && NODE_1_RSSI >= NODE_4_RSSI){
@@ -1949,8 +1949,8 @@ void loop() {
               jsonobject2["Suhu"] = NULL;
               jsonobject2["Kelembapan"] = NULL;
               jsonobject2["Unxtime"] = NULL;
-              serializeJson(doc, datakirim);
               datakirim = "";
+              serializeJson(doc, datakirim);              
               char kirim_loop[datakirim.length() + 1];
               datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
               if(NODE_3_RSSI >= NODE_4_RSSI){
@@ -1978,8 +1978,8 @@ void loop() {
                   jsonobject3["Roll"] = NULL;
                   jsonobject3["Frekuensi"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_4)){
@@ -2012,8 +2012,8 @@ void loop() {
                     jsonobject4["TofY"] = NULL;
                     jsonobject4["TofZ"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -2053,8 +2053,8 @@ void loop() {
                   jsonobject3["TofY"] = NULL;
                   jsonobject3["TofZ"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_3)){
@@ -2087,8 +2087,8 @@ void loop() {
                     jsonobject4["Roll"] = NULL;
                     jsonobject4["Frekuensi"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -2125,8 +2125,8 @@ void loop() {
               jsonobject2["Roll"] = NULL;
               jsonobject2["Frekuensi"] = NULL;
               jsonobject2["Unxtime"] = NULL;
-              serializeJson(doc, datakirim);
               datakirim = "";
+              serializeJson(doc, datakirim);              
               char kirim_loop[datakirim.length() + 1];
               datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
               if(NODE_1_RSSI >= NODE_4_RSSI){
@@ -2154,8 +2154,8 @@ void loop() {
                   jsonobject3["Suhu"] = NULL;
                   jsonobject3["Kelembapan"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_4)){
@@ -2188,8 +2188,8 @@ void loop() {
                     jsonobject4["TofY"] = NULL;
                     jsonobject4["TofZ"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -2230,8 +2230,8 @@ void loop() {
                   jsonobject3["TofY"] = NULL;
                   jsonobject3["TofZ"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_1)){
@@ -2264,8 +2264,8 @@ void loop() {
                     jsonobject4["Suhu"] = NULL;
                     jsonobject4["Kelembapan"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -2302,8 +2302,8 @@ void loop() {
               jsonobject2["TofY"] = NULL;
               jsonobject2["TofZ"] = NULL;
               jsonobject2["Unxtime"] = NULL;
-              serializeJson(doc, datakirim);
               datakirim = "";
+              serializeJson(doc, datakirim);              
               char kirim_loop[datakirim.length() + 1];
               datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
               if(NODE_1_RSSI >= NODE_3_RSSI){
@@ -2331,8 +2331,8 @@ void loop() {
                   jsonobject3["Suhu"] = NULL;
                   jsonobject3["Kelembapan"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_3)){
@@ -2365,8 +2365,8 @@ void loop() {
                     jsonobject4["Roll"] = NULL;
                     jsonobject4["Frekuensi"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
@@ -2407,8 +2407,8 @@ void loop() {
                   jsonobject3["Roll"] = NULL;
                   jsonobject3["Frekuensi"] = NULL;
                   jsonobject3["Unxtime"] = NULL;
-                  serializeJson(doc, datakirim);
                   datakirim = "";
+                  serializeJson(doc, datakirim);                  
                   char kirim_loop[datakirim.length() + 1];
                   datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                   if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_1)){
@@ -2441,8 +2441,8 @@ void loop() {
                     jsonobject4["Suhu"] = NULL;
                     jsonobject4["Kelembapan"] = NULL;
                     jsonobject4["Unxtime"] = NULL;
-                    serializeJson(doc, datakirim);
                     datakirim = "";
+                    serializeJson(doc, datakirim);                    
                     char kirim_loop[datakirim.length() + 1];
                     datakirim.toCharArray(kirim_loop,sizeof(kirim_loop));
                     if(!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop), NODE_Master)){
