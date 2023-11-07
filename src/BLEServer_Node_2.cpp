@@ -54,6 +54,9 @@ String dataterima; //data json yang diterima
 int count = 0; //variabel count untuk menghitung data pada json
 int jumlahnode[5]; //array berisi NodeID
 
+//variabel new data
+bool newdata = false;
+
 //variabel millis
 unsigned long previousTime = 0; // Waktu sebelumnya
 unsigned long intervalmillis = 10000; // Interval waktu (dalam milidetik)
@@ -159,6 +162,7 @@ void setup() {
       }
     }
   }
+  radio.startListening();
   printf_begin();        // needed for RF24* libs' internal printf() calls
   radio.printDetails();  // requires printf support
 
@@ -248,6 +252,10 @@ void loop() {
         jumlahnode[i] += NodeID;
       }
     }
+    newdata = true;
+  }
+  if (newdata == true){
+    radio.stopListening();
     //==================================================POSISI NODE KE - 1==================================================
     if (count == 1 && jumlahnode[0] == 6) {
       Serial.print("Received packet from NODE Master");
@@ -10879,6 +10887,8 @@ void loop() {
         }
       }
     }
+    radio.startListening();
+    newdata = false;
   }
   //pBLEScan->clearResults();   // delete results fromBLEScan buffer to release memory
 }
