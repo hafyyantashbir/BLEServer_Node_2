@@ -1,5 +1,8 @@
 #include <Arduino.h>
 
+//library loadcell
+#include "HX711.h"
+
 //library RTC
 #include <Wire.h>
 #include "RTClib.h"
@@ -13,6 +16,11 @@
 #include <RF24Network.h>
 #include <RF24Mesh.h>
 #include "printf.h"
+
+//konfigurasi loadcell
+#define DOUT  27
+#define CLK  26
+HX711 scale(DOUT, CLK);
 
 //konfigurasi stack size
 SET_LOOP_TASK_STACK_SIZE(64*1024); // 64KB
@@ -32,7 +40,8 @@ uint8_t dataBuffer[MAX_PAYLOAD_SIZE];  //MAX_PAYLOAD_SIZE is defined in RF24Netw
 
 //Variabel DATA
 int node_asal = 2; //data node
-unsigned long berat = 250; //data kelembapan
+float calibration_factor = 1135.00;
+int berat; //data berat
 String datakirim; //data json yang akan dikirim
 
 //variabel millis
@@ -69,6 +78,9 @@ void setup() {
   //    &Task1,
   //    0);
 
+  scale.set_scale();
+  scale.tare();
+
   if (! rtc.begin()) {
     Serial.println("Tidak dapat menemukan RTC! Periksa sirkuit.");
     while (1);
@@ -104,27 +116,27 @@ void setup() {
 }
 
 void loop() {
-  delay(1000);
-
   // print sisa memori stack pada void loop
   Serial.printf("\nLoop() - Free Stack Space: %d", uxTaskGetStackHighWaterMark(NULL));
   
   mesh.update();
   DateTime now = rtc.now();
-  StaticJsonDocument<96> doc; // Json Document
+  StaticJsonDocument<128> doc; // Json Document
 
   // Mengirim data ke master
   if (millis() - currentMillis >= 1000) {
     currentMillis = millis();
-    doc["NodeID"] = node_asal;
-    doc["Berat"] = berat;
-    doc["Unixtime"] = now.unixtime();
+    scale.set_scale(calibration_factor);
+    berat = scale.get_units(), 5;
+    doc["NodeID"] = String(node_asal);
+    doc["Berat"] = String(berat);
+    doc["Unixtime"] = String(now.unixtime());
     datakirim = "";
     serializeJson(doc, datakirim);
     char kirim_loop[datakirim.length() + 1];
     datakirim.toCharArray(kirim_loop, sizeof(kirim_loop));
 
-    if (!mesh.write(&kirim_loop, 'M', sizeof(kirim_loop))) {
+    if (!mesh.write(&kirim_loop, '2', sizeof(kirim_loop))) {
       if (!mesh.checkConnection()) {
         Serial.println("Memperbaharui Alamat");
         if (mesh.renewAddress() == MESH_DEFAULT_ADDRESS) {
