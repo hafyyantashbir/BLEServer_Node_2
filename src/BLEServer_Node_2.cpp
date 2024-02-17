@@ -23,7 +23,7 @@
 HX711 scale(DOUT, CLK);
 
 //konfigurasi stack size
-SET_LOOP_TASK_STACK_SIZE(64*1024); // 64KB
+SET_LOOP_TASK_STACK_SIZE(32*1024); // 64KB
 
 //konfigurasi RTC
 RTC_DS3231 rtc;
@@ -48,35 +48,19 @@ String datakirim; //data json yang akan dikirim
 unsigned long currentMillis = 0;
 
 //Fungsi untuk 2 loop
-//TaskHandle_t Task1;
+TaskHandle_t Task1;
 
 //program loop 2
-//void loop2( void * parameter) {
-//  for (;;) {
-//    unsigned long currentTime = millis(); // Waktu saat ini
-//
-//    if (currentTime - previousTime >= intervalmillis) {
-//      previousTime = currentTime; // Perbarui waktu sebelumnya
-//      Serial.println("MODE : SCANNING......");
-//      BLEScanResults foundDevices = pBLEScan->start(scanTime, false);
-//      Serial.print("RSSI NODE 1 : " + String(NODE_1_RSSI));
-//      Serial.println(" || RSSI NODE 3 : " + String(NODE_3_RSSI));
-//    }
-//  }
-//}
+void bacasensor( void * parameter) {
+ for (;;) {
+    scale.set_scale(calibration_factor);
+    berat = scale.get_units(), 5;
+    Serial.println("Running on Core : "+String(xPortGetCoreID())+", Berat : "+String(berat));
+ }
+}
 
 void setup() {
   Serial.begin(115200);
-
-  //Fungsi untuk 2 loop
-  //  xTaskCreatePinnedToCore(
-  //    loop2,
-  //    "BLE_SCANNING",
-  //    1000,
-  //    NULL,
-  //    1,
-  //    &Task1,
-  //    0);
 
   scale.set_scale();
   scale.tare();
@@ -109,6 +93,16 @@ void setup() {
   printf_begin();
   radio.printDetails();  // print detail konfigurasi NRF24L01
 
+  //Fungsi untuk 2 loop
+   xTaskCreatePinnedToCore(
+     bacasensor,    /* Task function. */
+     "baca_sensor", /* name of task. */
+     32768,         /* Stack size of task */
+     NULL,          /* parameter of the task */
+     1,             /* priority of the task */
+     &Task1,        /* Task handle to keep track of created task */
+     0);            /* pin task to core 0 */
+
   // print memori stack keseluruhan
   Serial.printf("Arduino Stack was set to %d bytes", getArduinoLoopTaskStackSize());
   // print sisa memori stack pada void setup
@@ -124,10 +118,8 @@ void loop() {
   StaticJsonDocument<128> doc; // Json Document
 
   // Mengirim data ke master
-  if (millis() - currentMillis >= 1000) {
+  if (millis() - currentMillis >= 250) {
     currentMillis = millis();
-    scale.set_scale(calibration_factor);
-    berat = scale.get_units(), 5;
     doc["NodeID"] = String(node_asal);
     doc["Berat"] = String(berat);
     doc["Unixtime"] = String(now.unixtime());
